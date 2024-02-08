@@ -52,9 +52,13 @@ input{
     border-top-left-radius: 0.75rem;
     border-bottom-left-radius: 0.75rem;
     padding: 0.75rem;
-    border: none;
+    border: 1px solid transparent;
+    
     background-color: #fbfbfb;
     width: 100%;
+    &:hover{
+        border: 1px solid rgba(43, 43, 43,0.8);;
+    }
 }
 img.arrow{
     
@@ -62,6 +66,9 @@ img.arrow{
     border-bottom-right-radius: 0.75rem;
     padding: 0.75rem;
     background-color: hsl(0, 0%, 17%);
+    &:hover{
+        background-color: rgba(43, 43, 43,0.8);
+    }
 }
 
 section.display-info{
