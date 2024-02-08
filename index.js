@@ -9,7 +9,7 @@ const errorMessage = document.getElementById('error');
 
 //saving the geolocation api
 const apiKey = 'at_U4n5Sxyp9RqMf0MaWKUrykOPH0LzZ';
-const url = 'http://ip-api.com/json/';
+const url = 'https://ipapi.co/';
 
 let responseIp;
 
@@ -31,7 +31,7 @@ function initializeMap(latitude, longitude) {
 const fetchIP = async(event)=>{
     event.preventDefault();
     const ipQuery = input.value;
-    const endpoint = `${url}${ipQuery}`;
+    const endpoint = `${url}${ipQuery}/json`;
     try{
         const response = await fetch(endpoint);
         if(response.ok){
@@ -46,8 +46,8 @@ const fetchIP = async(event)=>{
         }
 
          // Update the map with the obtained latitude and longitude values
-         const latitude = responseIp.lat;
-         const longitude = responseIp.lon;
+         const latitude = responseIp.latitude;
+         const longitude = responseIp.longitude;
          if (!map) {
              // If map is not initialized yet, initialize it with default coordinates
              initializeMap(latitude, longitude);
@@ -72,10 +72,10 @@ const showIp = (data)=>{
     // loc.innerHTML = locationText;
     // time.innerHTML = timeText;
     // isp.innerHTML = ispText;
-    ip.textContent = data.query;
-    loc.textContent = `${data.regionName}, ${data.country}`;
+    ip.textContent = data.ip;
+    loc.textContent = `${data.region}, ${data.country_code}`;
     time.textContent = data.timezone;
-    isp.textContent = data.isp;
+    isp.textContent = data.org;
 }
 
 
