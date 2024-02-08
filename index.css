@@ -12,6 +12,9 @@ body{
     font-family:'Rubik', 'Manrope', Helvetica, Arial,sans-serif;
 
 }
+main{
+    position: relative;
+}
 
 article.ip-section{
     background: url('/images/pattern-bg-mobile.png') no-repeat center center/cover;
