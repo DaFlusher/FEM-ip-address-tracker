@@ -27,6 +27,8 @@ article.ip-section{
 header{
     width: clamp(60vw, 70vw, 60vw);
     height: clamp(300px, 20vh, 10vh);
+    justify-content: center;
+    position: relative;
 
 }
 header h1{
@@ -42,6 +44,7 @@ span.title{
 }
 form{
     display: flex;
+    justify-content: center;
     
 
 }
@@ -120,6 +123,9 @@ div#map{
     header{
         height: 250px;
     }
+    header h1{
+        font-size: 1.5rem;
+    }
 
     section.display-info{
         top: 120px;
@@ -127,6 +133,9 @@ div#map{
     }
     div#error{
         grid-column: 1/span 2;
+    }
+    input{
+        width: 80%;
     }
 
 }
@@ -147,6 +156,9 @@ div#map{
         text-align: center;
         border-right: 1px solid rgba(150, 150, 150,0.3);
         
+    }
+    input{
+        width: 50%;
     }
 
 }

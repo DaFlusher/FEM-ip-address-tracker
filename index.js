@@ -9,7 +9,7 @@ const errorMessage = document.getElementById('error');
 
 //saving the geolocation api
 const apiKey = 'at_U4n5Sxyp9RqMf0MaWKUrykOPH0LzZ';
-const url = 'https://geo.ipify.org/api/v2/country,city?';
+const url = 'http://ip-api.com/json/';
 
 let responseIp;
 
@@ -31,7 +31,7 @@ function initializeMap(latitude, longitude) {
 const fetchIP = async(event)=>{
     event.preventDefault();
     const ipQuery = input.value;
-    const endpoint = `${url}apiKey=${apiKey}&ipAddress=${ipQuery}`;
+    const endpoint = `${url}${ipQuery}`;
     try{
         const response = await fetch(endpoint);
         if(response.ok){
@@ -46,8 +46,8 @@ const fetchIP = async(event)=>{
         }
 
          // Update the map with the obtained latitude and longitude values
-         const latitude = responseIp.location.lat;
-         const longitude = responseIp.location.lng;
+         const latitude = responseIp.lat;
+         const longitude = responseIp.lon;
          if (!map) {
              // If map is not initialized yet, initialize it with default coordinates
              initializeMap(latitude, longitude);
@@ -72,9 +72,9 @@ const showIp = (data)=>{
     // loc.innerHTML = locationText;
     // time.innerHTML = timeText;
     // isp.innerHTML = ispText;
-    ip.textContent = data.ip;
-    loc.textContent = `${data.location.region}, ${data.location.country}`;
-    time.textContent = data.location.timezone;
+    ip.textContent = data.query;
+    loc.textContent = `${data.regionName}, ${data.country}`;
+    time.textContent = data.timezone;
     isp.textContent = data.isp;
 }
 
