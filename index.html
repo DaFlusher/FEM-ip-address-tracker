@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <!--OGP-->
+  <meta property="og:title" content="FEM-IP Address Tracker Webapp" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.frontendmentor.io/solutions/responsive-fylo-dark-theme-landing-page-Gmkth45BNH" />
+  <meta property="og:description" content="Frontendmentor Ip Address tracker. It allows users input a specific ip address and view it's locaton on the map" />
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="/index.css">
+
+  <!--adding leaflet css-->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+     crossorigin=""/>
+
+  <!--adding leafletJS-->
+  <!-- Make sure you put this AFTER Leaflet's CSS -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+  crossorigin="">
+      
+  
+  </script>
+  
+  <title>Frontend Mentor | IP Address Tracker</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+
+    <main>
+
+        <article class="ip-section">
+          <header>
+            <h1><span class="title">ip</span> address tracker</h1>
+            <form>
+              <input type="text" placeholder="192.212.174.101" aria-labelledby="input ip address" id="input-ip">
+              <img src="/images/icon-arrow.svg" role="button"  alt="arrow right" class="arrow" id="submit-ip">
+            </form>
+        </header>
+        <section class="display-info">
+            <div id="error"></div>
+            <div class="address-info">
+              <p>ip address</p>
+              <h2 id="ip"></h2>
+            </div>
+
+            <div class="location-info">
+              <p>location</p>
+              <h2 id="location"></h2>
+            </div>
+
+            <div class="timezone-info">
+              <p>timezone</p>
+              <h2 id="timezone"></h2>
+            </div>
+
+            <div class="isp-info">
+              <p>isp</p>
+              <h2 id="isp"></h2>
+            </div>
+        </section>
+      </article>
+
+      <div id="map">
+
+      </div>
+       
+    </main>
+  
+  
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </div>
+    <script src="/index.js"></script>
+    <script>
+      
+    </script>
+</body>
+</html>

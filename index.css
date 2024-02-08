@@ -1,0 +1,149 @@
+/*importing google font Rubik*/
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap');
+
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family:'Rubik', 'Manrope', Helvetica, Arial,sans-serif;
+
+}
+
+article.ip-section{
+    background: url('/images/pattern-bg-mobile.png') no-repeat center center/cover;
+    display: grid;
+    place-items: center;
+    position: relative;
+    
+    
+}
+header{
+    width: clamp(60vw, 70vw, 60vw);
+    height: clamp(300px, 20vh, 10vh);
+
+}
+header h1{
+    font-size: 1.25rem;
+    text-align: center;
+    text-transform: capitalize;
+    color: white;
+    font-weight: 500;
+    padding: 1rem;
+}
+span.title{
+    text-transform: uppercase;
+}
+form{
+    display: flex;
+    
+
+}
+input{
+    border-top-left-radius: 0.75rem;
+    border-bottom-left-radius: 0.75rem;
+    padding: 0.75rem;
+    border: none;
+    background-color: #fbfbfb;
+    width: 100%;
+}
+img.arrow{
+    
+    border-top-right-radius: 0.75rem;
+    border-bottom-right-radius: 0.75rem;
+    padding: 0.75rem;
+    background-color: hsl(0, 0%, 17%);
+}
+
+section.display-info{
+    background-color: #fbfbfb;
+    width: clamp(60vw, 80vw, 60vw);
+    padding: 1rem;
+    text-align: center;
+    border-radius: 0.75rem;
+    display: grid;
+    gap: 20px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 150px;
+    display: grid;
+    box-shadow: 0px 0px 10px hsl(0, 0%, 17%);
+    place-items: center;
+    column-rule: 10px;
+    z-index: 2;
+    
+}
+
+h2{
+    color: hsl(0, 0%, 17%);
+    padding: 0.5rem;
+    font-size: 1.125rem;
+    font-weight: 500;
+}
+
+p{
+    font-size: 0.75rem;
+    color:hsl(0, 0%, 59%);
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+div#error{
+    color: red;
+    font-size: 1.2rem;
+    text-transform: capitalize;
+    font-weight: 600;
+   
+    grid-column: 1/span 1;
+}
+
+/*leafletJS Styling*/
+div#map{
+    height: 100vh;
+    position: relative;
+    z-index: 0;
+}
+
+/*adding media queries*/
+@media (min-width:768px){
+    article.ip-section{
+        background-image: url('/images/pattern-bg-desktop.png');
+    }
+
+    header{
+        height: 250px;
+    }
+
+    section.display-info{
+        top: 120px;
+        grid-template-columns: repeat(2,1fr);
+    }
+    div#error{
+        grid-column: 1/span 2;
+    }
+
+}
+
+
+@media (min-width: 1200px){
+    section.display-info{
+        grid-template-columns: repeat(4, 1fr);
+        column-rule: 1px solid green;
+        top: 200px;
+    }
+    div#error{
+        grid-column: 1/span 4;
+    }
+
+    div.address-info, .location-info, .timezone-info, .isp-info{
+        padding: 0.5rem;
+        text-align: center;
+        border-right: 1px solid rgba(150, 150, 150,0.3);
+        
+    }
+
+}
